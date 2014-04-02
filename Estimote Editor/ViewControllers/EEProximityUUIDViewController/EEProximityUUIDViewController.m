@@ -117,7 +117,7 @@
 -(void)editValueWithString:(NSString*)UUIDString
 {
 	[self increaseAsyncAction];
-	[self.beacon writeBeaconProximityUUID:UUIDString withCompletion:^(NSString *value, NSError *error) {
+	[self.beacon writeProximityUUID:UUIDString completion:^(NSString *value, NSError *error) {
 		if (error) {
 			UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Estimote write error"
 															message:[error localizedDescription]
